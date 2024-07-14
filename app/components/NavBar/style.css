@@ -58,8 +58,7 @@
           font-size: $font-14;
 
           & svg {
-            width: $space-20;
-            height: $space-20;
+            display: none;
           }
         }
       }
@@ -79,6 +78,14 @@
 
     &__main-buttons {
       height: $space-70;
+    }
+
+    &__main-buttons ul li a .button-component {
+      & svg {
+        display: block;
+        width: $space-20;
+        height: $space-20;
+      }
     }
   }
 }
@@ -166,6 +173,7 @@
               font-size: $font-15;
 
               & svg {
+                display: block;
                 width: $space-30;
                 height: $space-30;
               }
