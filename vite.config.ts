@@ -3,6 +3,12 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  server: {
+    port: 8788,
+  },
+  build: {
+    sourcemap: true,
+  },
   plugins: [
     remix({
       future: {
@@ -14,3 +20,5 @@ export default defineConfig({
     tsconfigPaths(),
   ],
 });
+
+
