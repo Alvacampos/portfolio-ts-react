@@ -27,6 +27,7 @@ export default {
   'space-60': '60px',
   'space-50': '50px',
   'space-40': '40px',
+  'space-35': '35px',
   'space-30': '30px',
   'space-20': '20px',
   'space-16': '16px',

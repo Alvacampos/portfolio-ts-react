@@ -56,7 +56,9 @@ export default function NavBar() {
           condition={!!LINKEDIN_LINK_ICON.url}
           className={getClasses('linkedin-anchor')}
         >
-          <LinkedinIcon className={getClasses('special-anchor')} />
+          <div className={getClasses('special-anchor-wrapper')}>
+            <LinkedinIcon className={getClasses('special-anchor')} />
+          </div>
         </ConditionalLink>
       </div>
       <div className={getClasses('main-section')}>
