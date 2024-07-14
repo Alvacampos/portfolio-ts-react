@@ -10,6 +10,18 @@ Run the dev server:
 npm run dev
 ```
 
+Run svg optimization
+
+```sh
+npm run build:svg
+```
+
+Run svg component creation
+
+```sh
+npm run build:icons
+```
+
 ## Deployment
 
 First, build your app for production:

@@ -17,6 +17,10 @@ body {
   }
 }
 
+main {
+  padding: 0 $space-5;
+}
+
 @media screen and (min-width: $desktop-small) {
   body {
     grid-auto-flow: column;
@@ -25,5 +29,9 @@ body {
     & .navbar-component {
       grid-row: 1;
     }
+  }
+
+  main {
+    padding: 0;
   }
 }

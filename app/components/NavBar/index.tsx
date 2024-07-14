@@ -1,6 +1,7 @@
 import Button, { links as ButtonLinks } from '~/components/Button';
 import { ConditionalLink } from '~/components/ConditionalWrapper';
 import { getClassMaker } from '~/utils/utils';
+import { useIntl } from 'react-intl';
 import { Home, Paper, Education, GithubIcon, LinkedinIcon } from '~/components/icons';
 import LinkedInQR from '~/assets/img/linkedin_dark.png';
 
@@ -11,47 +12,37 @@ export const links = () => [...ButtonLinks(), { rel: 'stylesheet', href: styles 
 const BLOCK = 'navbar-component';
 const getClasses = getClassMaker(BLOCK);
 
-const GIT_LINK_ICON = {
-  url: 'https://github.com/Alvacampos',
-  leftIcon: GithubIcon,
-  className: 'special-anchor',
-  // alt: 'Home Logo',
-  // title: 'Home',
-  // tabIndex: '-1',
-  // location: 'Home',
-};
-
-const MAIN_NAV = [
-  {
-    url: './',
-    label: 'Home',
-    leftIcon: Home,
-    // alt: 'Home Logo',
-    // title: 'Home',
-    // tabIndex: '-1',
-    // location: 'Home',
-  },
-  {
-    url: './skills',
-    label: 'CV',
-    leftIcon: Paper,
-    // alt: 'CV Logo',
-    // title: 'CV',
-    // tabIndex: '-1',
-    // location: 'CV',
-  },
-  {
-    url: './education',
-    label: 'Education',
-    leftIcon: Education,
-    // alt: 'Education Logo',
-    // title: 'Education',
-    // tabIndex: '-1',
-    // location: 'Education',
-  },
-];
-
 export default function NavBar() {
+  const { formatMessage } = useIntl();
+
+  const GIT_LINK_ICON = {
+    url: 'https://github.com/Alvacampos',
+    className: 'special-anchor',
+  };
+
+  const LINKEDIN_LINK_ICON = {
+    url: 'https://www.linkedin.com/in/gonzaloalvarezcampos/',
+    className: 'special-anchor',
+  };
+
+  const MAIN_NAV = [
+    {
+      url: './',
+      label: formatMessage({ id: 'HOME' }),
+      leftIcon: Home,
+    },
+    {
+      url: './skills',
+      label: formatMessage({ id: 'CV' }),
+      leftIcon: Paper,
+    },
+    {
+      url: './education',
+      label: formatMessage({ id: 'EDUCATION' }),
+      leftIcon: Education,
+    },
+  ];
+
   return (
     <nav className={getClasses()}>
       <div className={getClasses('special-anchor-container')}>
@@ -61,8 +52,8 @@ export default function NavBar() {
           </div>
         </ConditionalLink>
         <ConditionalLink
-          to={GIT_LINK_ICON.url}
-          condition={!!GIT_LINK_ICON.url}
+          to={LINKEDIN_LINK_ICON.url}
+          condition={!!LINKEDIN_LINK_ICON.url}
           className={getClasses('linkedin-anchor')}
         >
           <LinkedinIcon className={getClasses('special-anchor')} />

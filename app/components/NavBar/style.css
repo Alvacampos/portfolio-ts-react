@@ -43,16 +43,24 @@
       list-style-type: none;
       justify-content: space-around;
 
-      & li a .button-component {
-        display: flex;
-        gap: $space-15;
-        justify-content: center;
-        align-items: center;
-        font-size: $font-14;
+      & li {
+        &:hover {
+          cursor: pointer;
+          background-color: $default-grey;
+          transition: background-color 500ms linear;
+        }
 
-        & svg {
-          width: $space-20;
-          height: $space-20;
+        & a .button-component {
+          display: flex;
+          gap: $space-15;
+          justify-content: center;
+          align-items: center;
+          font-size: $font-14;
+
+          & svg {
+            width: $space-20;
+            height: $space-20;
+          }
         }
       }
     }
@@ -146,12 +154,7 @@
           min-height: 110px;
           justify-content: center;
           align-items: center;
-
-          &:hover {
-            cursor: pointer;
-            background-color: $default-grey;
-            transition: background-color 500ms linear;
-          }
+          box-shadow: $shadow-1;
 
           & a {
             width: 100%;

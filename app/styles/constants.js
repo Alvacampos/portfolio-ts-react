@@ -42,6 +42,7 @@ export default {
   'font-16': '16px',
   'font-15': '15px',
   'font-14': '14px',
+  'font-12': '12px',
 
   // Weights
   'weight-700': '700',

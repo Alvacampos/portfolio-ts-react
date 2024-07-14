@@ -1,4 +1,7 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
+import { IntlProvider, FormattedMessage, FormattedNumber } from 'react-intl';
+import messages from '~/intl/en-US.json';
+
 import NavBar, { links as NavBarLinks } from '~/components/NavBar';
 
 import '~/style.css';
@@ -34,8 +37,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <>
-      <NavBar />
-      <Outlet />
+      <IntlProvider messages={messages} locale="en" defaultLocale="en">
+        <NavBar />
+        <main>
+          <Outlet />
+        </main>
+      </IntlProvider>
     </>
   );
 }

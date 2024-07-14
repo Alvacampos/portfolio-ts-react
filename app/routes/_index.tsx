@@ -1,4 +1,13 @@
 import type { MetaFunction } from '@remix-run/node';
+import { FormattedMessage } from 'react-intl';
+import { getClassMaker } from '~/utils/utils';
+
+import styles from './style.css?url';
+
+export const links = () => [{ rel: 'stylesheet', href: styles }];
+
+const BLOCK = 'home-route';
+const getClasses = getClassMaker(BLOCK);
 
 export const meta: MetaFunction = () => {
   return [{ title: 'My Cv' }, { name: 'description', content: 'Welcome to my Cv!' }];
@@ -6,40 +15,13 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="font-sans p-4">
-      <h1 className="text-3xl">Welcome to Remix</h1>
-      <ul className="list-disc mt-4 pl-6 space-y-2">
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/start/quickstart"
-            rel="noreferrer"
-          >
-            5m Quick Start
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/start/tutorial"
-            rel="noreferrer"
-          >
-            30m Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/docs"
-            rel="noreferrer"
-          >
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div className={getClasses()}>
+      <h1>
+        <FormattedMessage id="WELCOME_MY_NAME_IS" />
+      </h1>
+      <p>
+        <FormattedMessage id="I_AM_A_SOFTWARE_ENGINEER" />
+      </p>
     </div>
   );
 }
