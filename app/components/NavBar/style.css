@@ -1,7 +1,7 @@
 .navbar-component {
   display: flex;
   flex-direction: column;
-  background-color: $default-black;
+  background: $default-black;
   min-height: 100%;
   min-width: $space-200;
 
@@ -54,19 +54,23 @@
       & li {
         &:hover {
           cursor: pointer;
-          background-color: $default-grey;
-          transition: background-color 500ms linear;
+          background: $default-grey;
+          transition: background 500ms linear;
         }
 
-        & a .button-component {
-          display: flex;
-          gap: $space-15;
-          justify-content: center;
-          align-items: center;
-          font-size: $font-14;
+        & a {
+          text-decoration: none;
 
-          & svg {
-            display: none;
+          .button-component {
+            display: flex;
+            gap: $space-15;
+            justify-content: center;
+            align-items: center;
+            font-size: $font-14;
+
+            & svg {
+              display: none;
+            }
           }
         }
       }
@@ -123,8 +127,8 @@
 
       &:hover {
         cursor: pointer;
-        background-color: $default-grey;
-        transition: background-color 500ms linear;
+        background: $default-grey;
+        transition: background 500ms linear;
       }
     }
 
@@ -163,7 +167,7 @@
             padding: $space-30 $space-40;
 
             & .button-component {
-              background-color: inherit;
+              background: inherit;
               cursor: inherit;
               font-size: $font-15;
 

@@ -1,5 +1,5 @@
 .button-component {
-  background-color: $default-black;
+  background: $default-black;
   margin: 0;
   padding: 0;
   border: none;

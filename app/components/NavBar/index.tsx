@@ -1,9 +1,9 @@
-import Button, { links as ButtonLinks } from '~/components/Button';
 import { ConditionalLink } from '~/components/ConditionalWrapper';
+import Button, { links as ButtonLinks } from '~/components/Button';
 import { getClassMaker } from '~/utils/utils';
 import { useIntl } from 'react-intl';
-import { Home, Paper, Education, GithubIcon, LinkedinIcon } from '~/components/icons';
 import LinkedInQR from '~/assets/img/linkedin_dark.png';
+import { Home, Paper, Education, GithubIcon, LinkedinIcon } from '~/components/icons';
 
 import styles from './style.css?url';
 

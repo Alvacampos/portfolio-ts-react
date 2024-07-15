@@ -16,12 +16,5 @@
     "forceConsistentCasingInFileNames": true,
     "allowJs": true
   },
-  "include": [
-    "remix.env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.jsx",
-    "lib/lift-and-shift/tsconfig.json"
-  ]
+  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
 }

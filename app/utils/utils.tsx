@@ -10,3 +10,5 @@ export const getClassMaker = (block = '') => {
     return className;
   };
 };
+
+export const noop = () => {};

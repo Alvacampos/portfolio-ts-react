@@ -1,6 +1,6 @@
 import type { ComponentType } from 'react';
 import { ConditionalLink } from '~/components/ConditionalWrapper';
-import { getClassMaker } from '~/utils/utils';
+import { getClassMaker, noop } from '~/utils/utils';
 
 import styles from './style.css?url';
 
@@ -16,6 +16,7 @@ type ButtonProps = {
   rightIcon?: ComponentType<{ className: string }>;
   leftIcon?: ComponentType<{ className: string }>;
   btnType?: 'button' | 'submit';
+  handleClick?: () => void;
 };
 
 export default function Button({
@@ -25,10 +26,11 @@ export default function Button({
   rightIcon: RightIcon,
   leftIcon: LeftIcon,
   btnType = 'button',
+  handleClick = noop,
 }: ButtonProps) {
   return (
     <ConditionalLink to={url} condition={!!url} className={getClasses('link-wrapper')}>
-      <button className={getClasses(className)} onClick={() => console.log('asd')} type={btnType}>
+      <button className={getClasses(className)} onClick={handleClick} type={btnType}>
         {LeftIcon && <LeftIcon className={getClasses('icon', 'left')} />}
         {label && label}
         {RightIcon && <RightIcon className={getClasses('icon', 'right')} />}

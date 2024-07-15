@@ -1,4 +1,3 @@
-import type { MetaFunction } from '@remix-run/node';
 import { FormattedMessage } from 'react-intl';
 import { getClassMaker } from '~/utils/utils';
 
@@ -8,10 +7,6 @@ export const links = () => [{ rel: 'stylesheet', href: styles }];
 
 const BLOCK = 'home-route';
 const getClasses = getClassMaker(BLOCK);
-
-export const meta: MetaFunction = () => {
-  return [{ title: 'My Cv' }, { name: 'description', content: 'Welcome to my Cv!' }];
-};
 
 export default function Index() {
   return (
