@@ -155,6 +155,17 @@ module.exports = {
       },
     },
 
+    // Cypress
+    {
+      files: ['cypress/**/*.{ts,js}', '**/*.cy.{ts,js}'],
+      plugins: ['cypress'],
+      extends: ['plugin:cypress/recommended'],
+      rules: {
+        'cypress/no-unnecessary-waiting': 'off',
+        'no-unused-expressions': ['off'],
+      },
+    },
+
     // Miscellaneous
     {
       files: ['app/api/**/*.{ts,js}'],

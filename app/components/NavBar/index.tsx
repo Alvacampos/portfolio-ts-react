@@ -1,13 +1,23 @@
-import { ConditionalLink } from '~/components/ConditionalWrapper';
-import Button, { links as ButtonLinks } from '~/components/Button';
-import { getClassMaker } from '~/utils/utils';
 import { useIntl } from 'react-intl';
+
 import LinkedInQR from '~/assets/img/linkedin_dark.png';
-import { Home, Paper, Education, GithubIcon, LinkedinIcon } from '~/components/icons';
+import Button, { links as ButtonLinks } from '~/components/Button';
+import { ConditionalLink } from '~/components/ConditionalWrapper';
+import {
+  Education,
+  GithubIcon,
+  Home,
+  LinkedinIcon,
+  Paper,
+} from '~/components/icons';
+import { getClassMaker } from '~/utils/utils';
 
 import styles from './style.css?url';
 
-export const links = () => [...ButtonLinks(), { rel: 'stylesheet', href: styles }];
+export const links = () => [
+  ...ButtonLinks(),
+  { rel: 'stylesheet', href: styles },
+];
 
 const BLOCK = 'navbar-component';
 const getClasses = getClassMaker(BLOCK);

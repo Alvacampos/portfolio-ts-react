@@ -1,4 +1,5 @@
 import type { ComponentType } from 'react';
+
 import { ConditionalLink } from '~/components/ConditionalWrapper';
 import { getClassMaker, noop } from '~/utils/utils';
 
@@ -23,14 +24,22 @@ export default function Button({
   url = undefined,
   className = '',
   label = '',
-  rightIcon: RightIcon,
-  leftIcon: LeftIcon,
+  rightIcon: RightIcon = undefined,
+  leftIcon: LeftIcon = undefined,
   btnType = 'button',
   handleClick = noop,
 }: ButtonProps) {
   return (
-    <ConditionalLink to={url} condition={!!url} className={getClasses('link-wrapper')}>
-      <button className={getClasses(className)} onClick={handleClick} type={btnType}>
+    <ConditionalLink
+      to={url}
+      condition={!!url}
+      className={getClasses('link-wrapper')}
+    >
+      <button
+        className={getClasses(className)}
+        onClick={handleClick}
+        type={btnType}
+      >
         {LeftIcon && <LeftIcon className={getClasses('icon', 'left')} />}
         {label && label}
         {RightIcon && <RightIcon className={getClasses('icon', 'right')} />}
