@@ -2,16 +2,61 @@
   &__time-line {
     display: flex;
     flex-direction: column;
+  }
 
-    /* &--right,
-    &--left {
-      width: 80%;
-    } */
+  & .vertical-timeline-element-content {
+    background: none;
 
-    &--right {
-      display: flex;
-      flex-direction: row-reverse;
-      align-self: flex-end;
+    & .bounce-in {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    & h2 {
+      color: $text-color;
+    }
+
+    & svg {
+      width: 40px;
+    }
+  }
+
+  & .vertical-timeline--two-columns {
+    &::before {
+      background: $variation-green;
+    }
+
+    & .vertical-timeline-element-content {
+      padding: 0;
+    }
+
+    & .vertical-timeline-element-content-arrow {
+      border-right-color: $variation-green;
+    }
+  }
+
+  & .vertical-timeline-element-icon {
+    background: #010408;
+    color: #216e39;
+    box-shadow:
+      0 0 0 4px #216e39,
+      inset 0 2px 0 rgba(0, 0, 0, 0.08),
+      0 3px 0 4px rgba(0, 0, 0, 0.05);
+  }
+}
+
+@media screen and (min-width: $mobile-small) {
+  .skills-route {
+    & .vertical-timeline {
+      max-width: 90%;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-small) {
+  .skills-route {
+    & .vertical-timeline {
+      max-width: 90%;
     }
   }
 }

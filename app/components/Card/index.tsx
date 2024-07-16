@@ -17,6 +17,7 @@ type CardProps = {
     text: string;
   }[];
   isRight?: boolean;
+  isStyleless?: boolean;
 };
 
 export default function Card({
@@ -24,9 +25,10 @@ export default function Card({
   texts,
   itemList,
   isRight = undefined,
+  isStyleless = false,
 }: CardProps) {
   return (
-    <div className={getClasses('', { right: isRight })}>
+    <div className={getClasses('', { right: isRight, styleless: isStyleless })}>
       {title && (
         <div className={getClasses('title-wrapper')}>
           <h2>{title}</h2>

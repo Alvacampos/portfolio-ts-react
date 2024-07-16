@@ -5,6 +5,9 @@
   min-height: 100%;
   min-width: $space-200;
   font-family: Lato, sans-serif;
+  z-index: 2;
+  position: sticky;
+  bottom: 0;
 
   &__special-anchor-container {
     display: flex;
@@ -145,6 +148,8 @@
       flex-direction: row;
       width: 100%;
       height: $space-80;
+      position: sticky;
+      top: 0;
 
       & ul {
         display: flex;

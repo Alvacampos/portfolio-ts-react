@@ -1,10 +1,16 @@
+import 'react-vertical-timeline-component/style.min.css';
+
 import { json, useLoaderData } from '@remix-run/react';
+import pkg, { VerticalTimeline } from 'react-vertical-timeline-component';
 import { v4 as uuid } from 'uuid';
 
 import Card, { links as cardLinks } from '~/components/Card';
+import { Job } from '~/components/icons';
 import { getClassMaker } from '~/utils/utils';
 
 import styles from './style.css?url';
+
+const { VerticalTimelineElement } = pkg;
 
 export const links = () => [
   ...cardLinks(),
@@ -16,6 +22,7 @@ const getClasses = getClassMaker(BLOCK);
 
 type DataTypes = {
   title: string;
+  date: string;
   texts: string[];
   itemList: {
     title: string;
@@ -28,10 +35,8 @@ export async function loader() {
   const data: DataTypes[] = [
     {
       title: 'Globant',
-      texts: [
-        'Date: Aug 2018 - Dec 2020 (2 .Yrs 4 .Mos)',
-        'Hired as Jr Web developer.',
-      ],
+      date: 'Aug 2018 - Dec 2020 (2 .Yrs 4 .Mos)',
+      texts: ['Hired as Jr Web developer.'],
       itemList: [
         {
           title: 'Project: eVestment',
@@ -45,6 +50,7 @@ export async function loader() {
     },
     {
       title: 'Globant',
+      date: 'Aug 2018 - Dec 2020 (2 .Yrs 4 .Mos)',
       texts: [
         'Date: Aug 2018 - Dec 2020 (2 .Yrs 4 .Mos)',
         'Hired as Jr Web developer.',
@@ -63,6 +69,7 @@ export async function loader() {
     },
     {
       title: 'Globant',
+      date: 'Aug 2018 - Dec 2020 (2 .Yrs 4 .Mos)',
       texts: [
         'Date: Aug 2018 - Dec 2020 (2 .Yrs 4 .Mos)',
         'Hired as Jr Web developer.',
@@ -91,10 +98,21 @@ export default function Skills() {
   return (
     <div className={getClasses()}>
       <div className={getClasses('time-line')}>
-        {data.map((item) => {
-          const key = uuid();
-          return <Card {...item} key={key} />;
-        })}
+        <VerticalTimeline>
+          {data.map((item) => {
+            const key = uuid();
+            return (
+              <VerticalTimelineElement
+                className={getClasses('element')}
+                date={item.date}
+                icon={<Job />}
+                key={key}
+              >
+                <Card {...item} isStyleless />
+              </VerticalTimelineElement>
+            );
+          })}
+        </VerticalTimeline>
       </div>
     </div>
   );
