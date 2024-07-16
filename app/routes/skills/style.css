@@ -1,0 +1,17 @@
+.skills-route {
+  &__time-line {
+    display: flex;
+    flex-direction: column;
+
+    /* &--right,
+    &--left {
+      width: 80%;
+    } */
+
+    &--right {
+      display: flex;
+      flex-direction: row-reverse;
+      align-self: flex-end;
+    }
+  }
+}

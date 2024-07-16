@@ -4,6 +4,7 @@
   background: $default-black;
   min-height: 100%;
   min-width: $space-200;
+  font-family: Lato, sans-serif;
 
   &__special-anchor-container {
     display: flex;
