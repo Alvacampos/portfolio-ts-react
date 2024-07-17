@@ -12,7 +12,7 @@ const getClasses = getClassMaker(BLOCK);
 type CardProps = {
   title: string;
   texts: string[];
-  itemList: {
+  itemList?: {
     title: string;
     text: string;
   }[];
