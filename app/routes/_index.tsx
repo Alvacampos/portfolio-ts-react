@@ -1,4 +1,5 @@
 import { FormattedMessage } from 'react-intl';
+
 import { getClassMaker } from '~/utils/utils';
 
 import styles from './style.css?url';

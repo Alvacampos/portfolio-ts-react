@@ -9,6 +9,56 @@
 
   &--styleless {
     border: none;
+
+    &:hover {
+      /* @keyframes slidein {
+        0% {
+          border: transparent;
+        }
+
+        25% {
+          border-top: 2px solid $variation-green;
+        }
+      }
+
+      animation: slidein 2s ease-in-out forwards; */
+
+      --border-angle: 0turn;
+      --main-bg: conic-gradient(
+        from var(--border-angle),
+        #213,
+        #112 5%,
+        #112 60%,
+        #213 95%
+      );
+
+      border: solid 5px transparent;
+      border-radius: 2em;
+      --gradient-border: conic-gradient(
+        from var(--border-angle),
+        transparent 25%,
+        #08f,
+        #f03 99%,
+        transparent
+      );
+
+      background:
+        // padding-box clip this background in to the overall element except the border.
+        var(--main-bg) padding-box,
+        // border-box extends this background to the border space
+        var(--gradient-border) border-box,
+        // Duplicate main background to fill in behind the gradient border. You can remove this if you want the border to extend "outside" the box background.
+        var(--main-bg) border-box;
+
+      background-position: center center;
+
+      animation: bg-spin 3s linear infinite;
+      @keyframes bg-spin {
+        to {
+          --border-angle: 1turn;
+        }
+      }
+    }
   }
 
   &__title-wrapper {

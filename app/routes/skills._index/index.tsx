@@ -1,6 +1,6 @@
 import 'react-vertical-timeline-component/style.min.css';
 
-import { json, useLoaderData } from '@remix-run/react';
+import { json, Link, useLoaderData } from '@remix-run/react';
 import pkg, { VerticalTimeline } from 'react-vertical-timeline-component';
 import { v4 as uuid } from 'uuid';
 
@@ -21,6 +21,7 @@ const BLOCK = 'skills-route';
 const getClasses = getClassMaker(BLOCK);
 
 type DataTypes = {
+  id: number;
   title: string;
   date: string;
   texts: string[];
@@ -34,6 +35,7 @@ type DataTypes = {
 export async function loader() {
   const data: DataTypes[] = [
     {
+      id: 1,
       title: 'Globant',
       date: 'Aug 2018 - Dec 2020 (2 .Yrs 4 .Mos)',
       texts: ['Hired as Jr Web developer.'],
@@ -49,6 +51,7 @@ export async function loader() {
       ],
     },
     {
+      id: 2,
       title: 'Globant',
       date: 'Aug 2018 - Dec 2020 (2 .Yrs 4 .Mos)',
       texts: [
@@ -68,6 +71,7 @@ export async function loader() {
       isRight: true,
     },
     {
+      id: 3,
       title: 'Globant',
       date: 'Aug 2018 - Dec 2020 (2 .Yrs 4 .Mos)',
       texts: [
@@ -108,7 +112,13 @@ export default function Skills() {
                 icon={<Job />}
                 key={key}
               >
-                <Card {...item} isStyleless />
+                <Link
+                  to={`/skills/${item.id}`}
+                  tabIndex={-1}
+                  className={getClasses('element-link')}
+                >
+                  <Card {...item} isStyleless />
+                </Link>
               </VerticalTimelineElement>
             );
           })}
