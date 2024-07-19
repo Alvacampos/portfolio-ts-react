@@ -28,11 +28,6 @@ const getClasses = getClassMaker(BLOCK);
 
 export const meta: MetaFunction = () => [
   { title: 'Gonzalo Alvarez Campos Cv' },
-  {
-    property: 'og:title',
-    content: 'Gonzalo Ramiro Alvarez Campos',
-  },
-  { name: 'description', content: 'Welcome to my Cv!' },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {

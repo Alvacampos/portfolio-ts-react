@@ -22,7 +22,7 @@
       }
 
       animation: border-highlight 0.5s ease-in-out forwards;
-      border: 2px solid transparent;
+      border: 1px solid transparent;
       background: #60686c99;
       cursor: pointer;
       transition: background 0.5s linear;
@@ -45,5 +45,18 @@
 
   &__list-item {
     list-style-type: none;
+  }
+
+  &__skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: $space-10;
+    gap: $space-10;
+
+    & p {
+      display: flex;
+      gap: inherit;
+      flex-wrap: wrap;
+    }
   }
 }

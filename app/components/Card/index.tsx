@@ -16,19 +16,26 @@ type CardProps = {
     title: string;
     text: string;
   }[];
-  isRight?: boolean;
   isStyleless?: boolean;
+  skills?: string[];
 };
 
 export default function Card({
   title,
   texts,
-  itemList,
-  isRight = undefined,
+  itemList = undefined,
   isStyleless = false,
+  skills = undefined,
 }: CardProps) {
+  const renderSkills = () =>
+    skills &&
+    skills.map((skill) => {
+      const key = uuid();
+      return <span key={key}>{skill}</span>;
+    });
+
   return (
-    <div className={getClasses('', { right: isRight, styleless: isStyleless })}>
+    <div className={getClasses('', { styleless: isStyleless })}>
       {title && (
         <div className={getClasses('title-wrapper')}>
           <h2>{title}</h2>
@@ -55,6 +62,11 @@ export default function Card({
               );
             })}
           </ul>
+        )}
+        {skills && (
+          <div className={getClasses('skills-container')}>
+            <p>Skills:{renderSkills()}</p>
+          </div>
         )}
       </div>
     </div>

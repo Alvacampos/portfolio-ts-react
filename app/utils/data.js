@@ -13,7 +13,7 @@ const WORK_ITEMS = [
     startDate: '2018-08-01T00:00:00.000',
     endDate: '2020-12-01T00:00:00.000',
     subtitle: 'Jr Web developer.',
-    skill: [
+    skills: [
       'HTML',
       'CSS',
       'Storybook',
@@ -43,7 +43,7 @@ const WORK_ITEMS = [
     startDate: '2020-12-01T00:00:00.000',
     endDate: '2021-08-01T00:00:00.000',
     subtitle: 'Mid Level Full-stack developer.',
-    skill: [
+    skills: [
       'HTML',
       'CSS',
       'Storybook',
@@ -71,7 +71,7 @@ const WORK_ITEMS = [
     title: 'Professor (part-time)',
     startDate: '2021-06-01T00:00:00.000',
     endDate: '2022-03-01T00:00:00.000',
-    skill: ['Teaching', 'C', 'Programming'],
+    skills: ['Teaching', 'C', 'Programming'],
     subtitle: 'Software Engineering Professor.',
     projects: 'Teaching programming in a university to first year students.',
   },
@@ -81,7 +81,7 @@ const WORK_ITEMS = [
     startDate: '2021-08-01T00:00:00.000',
     endDate: '2022-04-01T00:00:00.000',
     subtitle: 'Senior Full-stack developer.',
-    skill: [
+    skills: [
       'HTML',
       'CSS',
       'JavaScript',
@@ -111,7 +111,7 @@ const WORK_ITEMS = [
     title: 'Teacher (part-time)',
     startDate: '2022-03-01T00:00:00.000',
     endDate: '2023-03-01T00:00:00.000',
-    skill: ['Teaching', 'JavaScript', 'Programming'],
+    skills: ['Teaching', 'JavaScript', 'Programming'],
     subtitle: 'Javascript course Teacher.',
     projects: 'Teaching vanilla JavaScript fundamentals over the weekend.',
   },
@@ -121,7 +121,7 @@ const WORK_ITEMS = [
     startDate: '2022-04-01T00:00:00',
     subtitle: 'Senior Frontend developer.',
     isCurrent: true,
-    skill: [
+    skills: [
       'HTML',
       'CSS',
       'JavaScript',
