@@ -13,6 +13,7 @@ export default defineConfig({
   plugins: [
     remix({
       basename: '/portfolio-ts-react/',
+      ssr: false,
       future: {
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,
